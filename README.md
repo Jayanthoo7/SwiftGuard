@@ -35,23 +35,26 @@ To meet the requirement for "thorough testing and debugging," the Java engine in
 2.  **Start Audit Engine:** `cd engine-java && ./mvnw spring-boot:run`
 3.  **Run Test Suite:** `cd engine-java && ./mvnw test`
 
-cat << 'EOF' >> README.md
 
 ## 🔍 System in Action: Operational Flow
 Below is a visual breakdown of how SwiftGuard handles data across the full stack.
+
 
 ### 1. Unified Dashboard Overview
 <img width="1440" height="900" alt="Screenshot 2026-03-11 at 23 23 51" src="https://github.com/user-attachments/assets/518649a2-8b3f-40e0-942c-7b73102f0d52" />
 
 *The central hub for system administrators to monitor the real-time status of all transactions stored in the MongoDB ledger.*
 
+
 ### 2. Transaction Simulation & Ingestion
 <img width="1440" height="900" alt="Screenshot 2026-03-11 at 23 23 39" src="https://github.com/user-attachments/assets/74d54652-5cd7-4d96-a173-8893c335ebc1" />
 
 *The simulator interface allows for direct injection of transaction data into the Node.js Gateway, testing the API's ability to handle and queue new records.*
 
+
 ### 3. Live State Monitoring
 <img width="1440" height="900" alt="Screenshot 2026-03-11 at 23 20 57" src="https://github.com/user-attachments/assets/a78ab392-970a-405c-a770-b6ddc077782a" />
+
 
 *Demonstrates the asynchronous connection between the Java Audit Engine and the frontend. As the Java service processes the queue, the status updates from **PENDING** to **APPROVED** or **FLAGGED** automatically via the polling mechanism.*
 EOF
